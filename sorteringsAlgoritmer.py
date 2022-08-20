@@ -21,6 +21,20 @@ def bogoSort(items):
     print('Sorteret efter {} forsøg'.format(attempts))
     return items
 
+def insertionSort(arr):
+    for i in range(1, len(arr)):
+        j = i
+        while arr[j - 1] > arr[j] and j > 0:
+            arr[j - 1], arr[j] = arr[j], arr[j - 1]
+            j -= 1
+
+
+print()
+arr = [4,5,6,3,1,2]
+
+insertionSort(arr)
+print(arr)
+
 
 if __name__ == '__main__':
     l = list(range(0, 5))
@@ -36,3 +50,11 @@ if __name__ == '__main__':
     print('Succes! Algoritmen sorterer korrekt.')
     print('blandet: ', lb)
     print('sorteret:', ls)
+
+
+
+print()
+arr = [4,5,6,3,1,2]
+
+insertionSort(arr)
+print(arr)
