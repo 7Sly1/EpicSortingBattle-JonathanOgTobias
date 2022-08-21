@@ -21,19 +21,16 @@ def bogoSort(items):
     print('Sorteret efter {} forsøg'.format(attempts))
     return items
 
-def insertionSort(arr):
-    for i in range(1, len(arr)):
-        j = i
-        while arr[j - 1] > arr[j] and j > 0:
-            arr[j - 1], arr[j] = arr[j], arr[j - 1]
-            j -= 1
+def insertionSort(items):
+    items = items.copy()
+    for i in range(0,len(items)):
+        indexing = i - 1
+        while indexing >= 0 and i < items[indexing]:
+            items[indexing + 1] = items[indexing]
+            indexing -= 1
+        items[indexing + 1] = i
+    return items
 
-
-print()
-arr = [4,5,6,3,1,2]
-
-insertionSort(arr)
-print(arr)
 
 
 if __name__ == '__main__':
@@ -42,7 +39,7 @@ if __name__ == '__main__':
     for i in range(50):
         random.shuffle(lb)
         ## Kald den funktion, du vil teste
-        ls = bogoSort(l)
+        ls = insertionSort(lb)
         ## Kald den funktion, du vil teste
         if ls != l:
             print('Fejl! Algoritmen kan ikke sortere.')
@@ -50,11 +47,3 @@ if __name__ == '__main__':
     print('Succes! Algoritmen sorterer korrekt.')
     print('blandet: ', lb)
     print('sorteret:', ls)
-
-
-
-print()
-arr = [4,5,6,3,1,2]
-
-insertionSort(arr)
-print(arr)
