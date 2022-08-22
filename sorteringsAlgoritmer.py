@@ -24,13 +24,21 @@ def bogoSort(items):
 def insertionSort(items):
     items = items.copy()
     for i in range(0,len(items)):
-        indexing = i - 1
-        while indexing >= 0 and i < items[indexing]:
-            items[indexing + 1] = items[indexing]
-            indexing -= 1
-        items[indexing + 1] = i
+        index = i - 1
+        while index >= 0 and i < items[index]:
+            items[index + 1] = items[index]
+            index -= 1
+        items[index + 1] = i
     return items
 
+
+def bubbleSort(items):
+    items = items.copy()
+    for i in range(0,len(items)):
+        for index in range(0,len(items)-i-1):
+            if items[index] > items[index + 1]:
+                items[index], items[index + 1] = items[index + 1], items[index]
+    return items
 
 
 if __name__ == '__main__':
@@ -39,7 +47,7 @@ if __name__ == '__main__':
     for i in range(50):
         random.shuffle(lb)
         ## Kald den funktion, du vil teste
-        ls = insertionSort(lb)
+        ls = bubbleSort(lb)
         ## Kald den funktion, du vil teste
         if ls != l:
             print('Fejl! Algoritmen kan ikke sortere.')
