@@ -22,15 +22,23 @@ def bogoSort(items):
     return items
 
 def insertionSort(items):
-    items = items.copy() # Her tager vi listen "Items" som var vedlagt i opgaven.
-    for i in range(0,len(items)): # Her definere vi vores længde af listen "Items".
-        index = i - 1 # Her laver en variabel
-        while index >= 0 and i < items[index]: # Her laver vi et "While Loop",
-            # som tjekker at index enten er større eller lige 0,
-            # samt at i vores liste forbliver mindre end vores index i listen.
+    # Her tager vi listen "Items" som var vedlagt i opgaven.
+    items = items.copy()
+    # Her definere vi vores længde af listen "Items".
+    for i in range(0,len(items)):
+        # Her laver vi variabelen "index", den er sat til at ligge en plads bagved "i".
+        index = i - 1
+        '''Her laver vi et "While Loop",
+        som tjekker at index enten er større eller lige 0,
+        samt at i vores liste forbliver mindre end vores index i listen.'''
+        while index >= 0 and i < items[index]:
+
             items[index + 1] = items[index]
+
             index -= 1
+
         items[index + 1] = i
+
     return items
 
 
