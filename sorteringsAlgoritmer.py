@@ -1,3 +1,6 @@
+
+
+
 import random, copy
 
 def bogoSort(items):
@@ -43,8 +46,11 @@ def insertionSort(items):
 
 
 def bubbleSort(items):
+    # Her tager vi listen "Items" som var vedlagt i opgaven.
     items = items.copy()
+    # Her definere vi vores længde af listen "Items".
     for i in range(0,len(items)):
+        # Her laver vi variabelen "index", den er sat til at ligge en plads bagved "i".
         for index in range(0,len(items)-i-1):
             if items[index] > items[index + 1]:
                 items[index], items[index + 1] = items[index + 1], items[index]
