@@ -56,6 +56,7 @@ def bubbleSort(items):
             if items[index] > items[index + 1]:
                 # Hvis ikke, så bytte vi rundt på de 2 elementer.
                 items[index], items[index + 1] = items[index + 1], items[index]
+    # Her returnere vi listen "items" i korrekt i sorteret rækkefølge
     return items
 
 
