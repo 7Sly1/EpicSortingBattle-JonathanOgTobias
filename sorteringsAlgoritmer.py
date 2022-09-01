@@ -33,13 +33,13 @@ def insertionSort(items):
         index = i - 1
         '''Her laver vi et "While Loop",
         som tjekker at index enten er større eller lige 0,
-        samt at "i" vores liste forbliver mindre end vores index i listen.'''
+        samt at "i" i vores liste forbliver mindre end vores index i listen.'''
         while index >= 0 and i < items[index]:
             """Hvis vores betingelser for det "While Loop" er sande,
             så får vi koden til at bytte index plads med den foran."""
             items[index + 1] = items[index]
-            '''Efter vi at de to værdier har bytte plads, 
-                sætter vi index tilbage dets gamle plads.'''
+            '''Efter at de to værdier har bytte plads, 
+                sætter vi index tilbage på dets gamle plads.'''
             index -= 1
         #Her beder vi om at hoppe en plads videre i vores liste Items
         items[index + 1] = i
