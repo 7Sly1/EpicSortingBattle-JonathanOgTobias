@@ -43,20 +43,20 @@ def insertionSort(items):
             index -= 1
         #Her beder vi om at hoppe en plads videre i vores liste Items
         items[index + 1] = i
-    #Når vi er færdige, retunere vi listen "items"
+    #Når vi er færdige retunere vi listen "items", i korrekt sorteret rækkefølge
     return items
 
 
 def bubbleSort(items):
-    # Her tager vi listen "Items" som var vedlagt i opgaven.
+    # Her tager vi listen "items" som var vedlagt i opgaven.
     items = items.copy()
     # Her definere vi vores længde af listen "Items".
     for i in range(0,len(items)):
         # Her laver vi variabelen "index", den er sat til at ligge en plads bagved "i".
         for index in range(0,len(items)-i-1):
-            # Her laver vi et tjek om de 2 elementer vi sammenligner står i korrekt rækkefølge.
+            # Her tjekker vi om de 2 elementer vi sammenligner står i korrekt rækkefølge.
             if items[index] > items[index + 1]:
-                # Hvis ikke, så bytte vi rundt på de 2 elementer.
+                # Hvis ikke, så bytter vi rundt på de 2 elementer.
                 items[index], items[index + 1] = items[index + 1], items[index]
     # Her returnere vi listen "items" i korrekt i sorteret rækkefølge
     return items
