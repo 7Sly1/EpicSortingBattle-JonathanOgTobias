@@ -46,6 +46,20 @@ def insertionSort(items):
     #Når vi er færdige retunere vi listen "items", i korrekt sorteret rækkefølge
     return items
 
+def selectionSort(items):
+    # Her tager vi listen "Items" som var vedlagt i opgaven.
+    items = items.copy()
+    for i in range(0,len(items)):
+
+    minimum_Index =
+    
+
+
+
+    return items
+
+
+
 
 def bubbleSort(items):
     # Her tager vi listen "items" som var vedlagt i opgaven.
@@ -60,6 +74,14 @@ def bubbleSort(items):
                 items[index], items[index + 1] = items[index + 1], items[index]
     # Her returnere vi listen "items" i korrekt i sorteret rækkefølge
     return items
+
+
+
+
+
+
+
+
 
 
 if __name__ == '__main__':
