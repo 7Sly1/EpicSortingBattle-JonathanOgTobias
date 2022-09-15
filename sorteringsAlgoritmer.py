@@ -56,9 +56,9 @@ def bubbleSort(items):
         # Her laver vi variabelen "index", den er sat til at ligge en plads bagved "i".
         for index in range(0,len(items)-i-1):
             # Her tjekker vi om de 2 elementer vi sammenligner står i korrekt rækkefølge.
-            if items[index] > items[index + 1]:
+            if items[index] > items[i]:
                 # Hvis ikke, så bytter vi rundt på de 2 elementer.
-                items[index], items[index + 1] = items[index + 1], items[index]
+                items[index], items[i] = items[i], items[index]
     # Her returnere vi listen "items" i korrekt i sorteret rækkefølge
     return items
 
