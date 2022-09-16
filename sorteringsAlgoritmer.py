@@ -2,7 +2,7 @@
 
 
 import random, copy
-
+'''
 def bogoSort(items):
     # Kopier den liste, vi har modtaget som parameter, så vi ikke ændrer den originale
     items = items.copy()
@@ -23,6 +23,7 @@ def bogoSort(items):
                 break # Bryd løkken hvis et eneste element er forkert sorteret
     print('Sorteret efter {} forsøg'.format(attempts))
     return items
+    '''
 
 def insertionSort(items):
     # Her tager vi listen "Items" som var vedlagt i opgaven.
