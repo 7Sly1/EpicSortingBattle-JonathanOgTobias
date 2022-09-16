@@ -1,29 +1,6 @@
 import random, sys
 from inspect import getmembers
-
-'''
-def bogoSort(items):
-    # Kopier den liste, vi har modtaget som parameter, så vi ikke ændrer den originale
-    items = items.copy()
-    isSorted = None # Boolean til markering af, om listen er sorteret
-    attempts = 0 # Tællevariabel til at holde styr på antal af forsøg
-    while not isSorted:
-        attempts += 1
-        if attempts > len(items) * 5000: # Check for at stoppe tendensen mod uendeligt
-            print('Giver op på grund af for mange forsøg ({}) og bruger TimSort'.format(attempts))
-            items.sort()
-            return items
-        random.shuffle(items) # Bland alle elementer helt tilfældigt
-        isSorted = True # Vi går ud fra at listen tilfældigvis er sorteret,
-        # ...og prøver i denne løkke at bevise det modsatte
-        for index in range(len(items)-1):
-            if items[index] > items[index+1]:
-                isSorted = False
-                break # Bryd løkken hvis et eneste element er forkert sorteret
-    print('Sorteret efter {} forsøg'.format(attempts))
-    return items
-    '''
-
+"""
 def insertionSort(items):
     # Her tager vi listen "Items" som var vedlagt i opgaven.
     items = items.copy()
@@ -35,8 +12,8 @@ def insertionSort(items):
         som tjekker at index enten er større eller lige 0,
         samt at "i" i vores liste forbliver mindre end vores index i listen.'''
         while index >= 0 and i < items[index]:
-            """Hvis vores betingelser for det "While Loop" er sande,
-            så får vi koden til at bytte index plads med den foran."""
+            """"""Hvis vores betingelser for det "While Loop" er sande,
+            så får vi koden til at bytte index plads med den foran.""""""
             items[index + 1] = items[index]
             '''Efter at de to værdier har bytte plads, 
                 sætter vi index tilbage på dets gamle plads.'''
@@ -45,20 +22,21 @@ def insertionSort(items):
         items[index + 1] = i
     #Når vi er færdige retunere vi listen "items", i korrekt sorteret rækkefølge
     return items
-
+"""
 
 
 def bubbleSort(items):
     # Her tager vi listen "items" som var vedlagt i opgaven.
     items = items.copy()
+    n = len(items)
     # Her definere vi vores længde af listen "Items".
-    for i in range(0,len(items) - 1):
+    for i in range(n - 1):
         # Her laver vi variabelen "index", den er sat til at ligge en plads bagved "index + 1".
-        for index in range(0,len(items) - i - 1):
+        for index in range(0, n - i - 1):
             # Her tjekker vi om de 2 elementer vi sammenligner står i korrekt rækkefølge.
             if items[index] > items[index+1]:
                 # Hvis ikke, så bytter vi rundt på de 2 elementer.
-                items[index], items[i] = items[i], items[index]
+                items[index], items[index+1] = items[index+1], items[index]
     # Her returnere vi listen "items" i korrekt i sorteret rækkefølge
     return items
 
