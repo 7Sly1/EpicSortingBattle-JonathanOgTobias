@@ -1,7 +1,6 @@
+import random, sys
+from inspect import getmembers
 
-
-
-import random, copy
 '''
 def bogoSort(items):
     # Kopier den liste, vi har modtaget som parameter, så vi ikke ændrer den originale
@@ -53,11 +52,11 @@ def bubbleSort(items):
     # Her tager vi listen "items" som var vedlagt i opgaven.
     items = items.copy()
     # Her definere vi vores længde af listen "Items".
-    for i in range(0,len(items)):
-        # Her laver vi variabelen "index", den er sat til at ligge en plads bagved "i".
-        for index in range(0,len(items)-i-1):
+    for i in range(0,len(items) - 1):
+        # Her laver vi variabelen "index", den er sat til at ligge en plads bagved "index + 1".
+        for index in range(0,len(items) - i - 1):
             # Her tjekker vi om de 2 elementer vi sammenligner står i korrekt rækkefølge.
-            if items[index] > items[i]:
+            if items[index] > items[index+1]:
                 # Hvis ikke, så bytter vi rundt på de 2 elementer.
                 items[index], items[i] = items[i], items[index]
     # Her returnere vi listen "items" i korrekt i sorteret rækkefølge
@@ -65,26 +64,24 @@ def bubbleSort(items):
 
 
 
-
-
-
-
-
-
-
 if __name__ == '__main__':
-    l = list(range(0, 5))
-    lb = l.copy()
-    for i in range(50):
-        random.shuffle(lb)
-        ## Kald den funktion, du vil teste
-        ls = bubbleSort(lb)
-        ## Kald den funktion, du vil teste
-        if ls != l:
-            print('Fejl! Algoritmen kan ikke sortere.')
-            break
-    print('Succes! Algoritmen sorterer korrekt.')
-    print('blandet: ', lb)
-    print('sorteret:', ls)
 
+    functions = [] # Liste til funktioner vi gerne vil teste
+
+    for function in getmembers(sys.modules[__name__]): # Får alle funktioner i denne fil
+        if 'Sort' in function[0]: # Finder "sort" i functionen
+            functions.append(function) # Appender de fundne funktioner til en liste så vi kan iterate over dem
+
+    for sort in functions:
+        l = list(range(0, 10)) # Laver en tilfældig liste
+        lb = l.copy() # Kopierer listen for at bevare den originale
+        for i in range(50): # Prøver at sortere den
+            random.shuffle(lb)
+            ls = sort[1](l)
+            if ls != l:
+                print(f'\nFejl! {sort[0]} Algoritmen kan ikke sortere.')
+                break
+        print(f'\nSucces! {sort[0]} Algoritmen sorterer korrekt.')
+        print('blandet: ', lb)
+        print('sorteret:', ls)
 
