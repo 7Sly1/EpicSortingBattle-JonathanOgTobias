@@ -1,28 +1,59 @@
 import random, sys
 from inspect import getmembers
-"""
+
+
 def insertionSort(items):
     # Her tager vi listen "Items" som var vedlagt i opgaven.
     items = items.copy()
     # Her definere vi vores længde af listen "Items".
-    for i in range(0,len(items)):
+    for i in range(1,len(items)):
         # Her laver vi variabelen "index", den er sat til at ligge en plads bagved "i".
+        index2 = items[i]
         index = i - 1
         '''Her laver vi et "While Loop",
         som tjekker at index enten er større eller lige 0,
         samt at "i" i vores liste forbliver mindre end vores index i listen.'''
-        while index >= 0 and i < items[index]:
-            """"""Hvis vores betingelser for det "While Loop" er sande,
-            så får vi koden til at bytte index plads med den foran.""""""
+        while index >= 0 and index2 < items[index]:
+            '''Hvis vores betingelser for det "While Loop" er sande,
+            så får vi koden til at bytte index plads med den foran.'''
             items[index + 1] = items[index]
-            '''Efter at de to værdier har bytte plads, 
-                sætter vi index tilbage på dets gamle plads.'''
+            #Efter at de to værdier har bytte plads,
+                #sætter vi index tilbage på dets gamle plads.
             index -= 1
         #Her beder vi om at hoppe en plads videre i vores liste Items
-        items[index + 1] = i
+        items[index + 1] = index2
     #Når vi er færdige retunere vi listen "items", i korrekt sorteret rækkefølge
     return items
-"""
+
+'''
+def insertionSort(items):
+    # Traverse through 1 to len(arr)
+    items = items.copy()
+    for i in range(1, len(items)):
+
+        key = items[i]
+
+        # Move elements of arr[0..i-1], that are
+        # greater than key, to one position ahead
+        # of their current position
+        j = i - 1
+        while j >= 0 and key < items[j]:
+            items[j + 1] = items[j]
+            j -= 1
+        items[j + 1] = key
+
+    return items
+
+'''
+''''# sorting the array [12, 11, 13, 5, 6] using insertionSort
+arr = [12, 11, 13, 5, 6]
+insertionSort(arr)
+lst = []  # empty list to store sorted elements
+print("Sorted array is : ")
+for i range(len(arr)):
+    lst.append(arr[i])  # appending the elements in sorted order
+print(lst)'''
+
 
 
 def bubbleSort(items):
